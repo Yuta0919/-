@@ -1,0 +1,4 @@
+name: Flag
+version: '${project.version}'
+main: flag.flag.Flag
+api-version: 1.19
