@@ -14,6 +14,7 @@ public class EventListner implements Listener {
     public void onPlaceBlock(PlayerInteractEvent e){
         Player p = e.getPlayer();
         if(e.getClickedBlock().getType() == Material.MOSSY_COBBLESTONE)return;
+        //event追加
         p.sendMessage("cancel");
         e.setCancelled(true);
     }
