@@ -7,7 +7,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.HashMap;
 
-public class cobwebdestroy extends JavaPlugin {
+public class cobwebdestroy extends JavaPlugin {//
     public static HashMap<Integer,Integer> breaktime ;
     public static void cobwebbreak(){
         BukkitRunnable task = new BukkitRunnable() {

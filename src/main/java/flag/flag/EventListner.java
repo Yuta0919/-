@@ -9,7 +9,7 @@ import org.bukkit.event.block.BlockPlaceEvent;
 
 public class EventListner implements Listener {
     public static Location[] loc;
-    public static int max;
+    public static int max;//a
 
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent e) {

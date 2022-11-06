@@ -23,7 +23,7 @@ public final class Flag extends JavaPlugin {
     }
 
     @Override
-    public void onDisable() {
+    public void onDisable() {//
         // Plugin shutdown logic
     }
     public static Flag getInstance(){return instance;}
