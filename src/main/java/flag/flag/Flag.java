@@ -15,8 +15,9 @@ public final class Flag extends JavaPlugin {
         instance = this;
         amount = 0;
         plugin = this;
-        Bukkit.getPluginManager().registerEvents(new EventListner(),this);
         cobwebdestroy.cobwebbreak();
+        Bukkit.getPluginManager().registerEvents(new EventListner(),this);
+        Bukkit.getPluginManager().registerEvents(new AzEventListner(),this);
         //getCommand("creeper").setExecutor(new AzCommand());
         super.onEnable();
     }

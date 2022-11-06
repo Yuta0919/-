@@ -10,7 +10,7 @@ import org.bukkit.event.block.BlockPlaceEvent;
 public class EventListner implements Listener {
     public static Location[] loc;
     public static int max;
-    public static int select=0;
+
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent e) {
         Player p = e.getPlayer();
@@ -19,16 +19,17 @@ public class EventListner implements Listener {
             int blocky = e.getBlock().getY() - 1;
             int blockz = e.getBlock().getZ();
             World w = e.getBlock().getWorld();
-            if (new Location(w,blockx,blocky,blockz).getBlock().getType()==Material.MOSSY_COBBLESTONE) {
+            if (new Location(w, blockx, blocky, blockz).getBlock().getType() == Material.MOSSY_COBBLESTONE) {
                 p.sendMessage("羊毛を設置できました。");
-            }else{
+            } else {
                 p.sendMessage("羊毛はそこにはおけません。苔むした丸石においてください。");
                 e.setCancelled(true);
             }
-            if(e.getBlock().getType()==Material.COBWEB){
-            loc[select] = e.getBlock().getLocation();
+            if (e.getBlock().getType() == Material.COBWEB) {
+                cobwebdestroy.cobwaysubscribe();
+                loc[max] = e.getBlock().getLocation();
+                max++;
             }
-
         }
     }
     @EventHandler
