@@ -18,7 +18,7 @@ public class cobwebdestroy {
                     breaktime.put(i, j);
                     if(breaktime.get(i)==5){
                         new Location(EventListner.w, EventListner.selectx[i], EventListner.selecty[i], EventListner.selectz[i]).getBlock().setType(Material.AIR);
-                    }
+                    }//a
                 }
             }
         };
