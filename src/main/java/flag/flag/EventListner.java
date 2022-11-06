@@ -4,9 +4,9 @@ import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.Action;
+import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
-import org.bukkit.event.player.PlayerInteractEvent;
+import org.jetbrains.annotations.NotNull;
 
 public class EventListner implements Listener {
     @EventHandler
@@ -20,10 +20,25 @@ public class EventListner implements Listener {
             if (new Location(w,blockx,blocky,blockz).getBlock().getType()==Material.MOSSY_COBBLESTONE) {
                 p.sendMessage("羊毛を設置できました。");
             }else{
-                //a
                 p.sendMessage("羊毛はそこにはおけません。苔むした丸石においてください。");
                 e.setCancelled(true);
             }
+            if(e.getBlock().getType()==Material.COBWEB){
+
+
+
+            }
+
+        }
+    }
+    @EventHandler
+    public void onBlockBreak(BlockBreakEvent e){
+        Material blocktype =e.getBlock().getType();
+        if(blocktype==Material.RED_WOOL||blocktype==Material.BLUE_WOOL){
+            e.getPlayer().sendMessage("羊毛を破壊しました");
+            e.setDropItems(false);
+        }else{
+            e.setCancelled(true);
         }
     }
 }
