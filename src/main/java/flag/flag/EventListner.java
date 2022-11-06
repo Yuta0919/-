@@ -6,9 +6,11 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
-import org.jetbrains.annotations.NotNull;
 
 public class EventListner implements Listener {
+    public static Location[] loc;
+    public static int max;
+    public static int select=0;
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent e) {
         Player p = e.getPlayer();
@@ -24,9 +26,7 @@ public class EventListner implements Listener {
                 e.setCancelled(true);
             }
             if(e.getBlock().getType()==Material.COBWEB){
-
-
-
+            loc[select] = e.getBlock().getLocation();
             }
 
         }
