@@ -20,6 +20,7 @@ public class EventListner implements Listener {
             if (new Location(w,blockx,blocky,blockz).getBlock().getType()==Material.MOSSY_COBBLESTONE) {
                 p.sendMessage("羊毛を設置できました。");
             }else{
+                //a
                 p.sendMessage("羊毛はそこにはおけません。苔むした丸石においてください。");
                 e.setCancelled(true);
             }
